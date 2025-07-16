@@ -2,62 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nutaku - Hacked</title>
+  <title>Nutaku Login</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      background: black;
-      font-family: 'Courier New', monospace;
-    }
-
-    .background {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: url('nutaku.png') no-repeat center center;
+      height: 100vh;
+      background: url('nutaku-bg.png') no-repeat center center;
       background-size: cover;
-      filter: brightness(0.4);
+      font-family: Arial, sans-serif;
     }
 
-    .overlay {
+    .login-popup {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 2;
-      color: #00ff00;
-      text-shadow: 0 0 10px #00ff00;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #1c1f2a;
+      width: 320px;
+      border-radius: 15px;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+
+    .login-popup h2 {
       text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
     }
 
-    h1 {
-      font-size: 64px;
-      animation: blink 1s infinite;
+    .google-btn {
+      background-color: #ffffff;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-bottom: 20px;
     }
 
-    p {
-      font-size: 24px;
+    .google-btn img {
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .separator {
+      text-align: center;
+      color: #aaa;
       margin: 10px 0;
+      position: relative;
     }
 
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
+    .separator::before,
+    .separator::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #444;
+    }
+
+    .separator::before {
+      left: 0;
+    }
+
+    .separator::after {
+      right: 0;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #2b2f3d;
+      color: white;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #1e9fff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .footer {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 10px;
+      color: #888;
+    }
+
+    .footer a {
+      color: #1e9fff;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="overlay">
-    <h1>💀 HACKED 💀</h1>
-    <p>This page was exploited via <strong>Open Redirect</strong></p>
-    <p>Reported by <strong>YourName</strong></p>
+
+  <div class="login-popup">
+    <h2>Login and Play Now</h2>
+    <button class="google-btn">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo">
+      Login with Google
+    </button>
+
+    <div class="separator">OR</div>
+
+    <form>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button class="login-btn" type="submit">Login</button>
+    </form>
+
+    <div class="footer">
+      <a href="#">Forgot password?</a><br>
+      This site is protected by reCAPTCHA and the Google<br>
+      <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a><br><br>
+      Don’t have an account? <a href="#">Sign up</a>
+    </div>
   </div>
+
 </body>
 </html>
